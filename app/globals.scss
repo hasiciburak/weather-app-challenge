@@ -1,0 +1,436 @@
+@use "./theme.scss" as *;
+@import "tailwindcss";
+
+// Font Face Declarations
+
+// DM Sans - Variable Font
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// DM Sans - Variable Italic Font
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+// DM Sans - Static Fonts
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DM_Sans/static/DMSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DM_Sans/static/DMSans-Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DM_Sans/static/DMSans-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DM_Sans/static/DMSans-SemiBoldItalic.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DM_Sans/static/DMSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Bricolage Grotesque - Variable Font
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("./assets/fonts/Bricolage_Grotesque/BricolageGrotesque-VariableFont_opsz,wdth,wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Bricolage Grotesque - Static Bold Font
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("./assets/fonts/Bricolage_Grotesque/static/BricolageGrotesque-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @include font-body;
+  color: color-neutral(900);
+  background-color: color-neutral(0);
+  font-size: $font-size-body;
+  font-weight: $font-weight-medium;
+  line-height: 1.2;
+  min-height: 100vh;
+}
+
+// Text Preset 1: DM Sans, SemiBold Italic - 96px, line-height 100%, letter-spacing -2px
+.text-preset-1 {
+  @include font-body;
+  font-size: 96px;
+  font-weight: $font-weight-semibold;
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: color-neutral(900);
+}
+
+// Text Preset 2: Bricolage Grotesque, Bold - 52px, line-height 120%, letter-spacing 0
+.text-preset-2 {
+  @include font-heading;
+  font-size: 52px;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: color-neutral(900);
+}
+
+// Text Preset 3: DM Sans, Light - 32px, line-height 100%, letter-spacing 0
+.text-preset-3 {
+  @include font-body;
+  font-size: 32px;
+  font-weight: $font-weight-light;
+  line-height: 1;
+  letter-spacing: 0;
+  color: color-neutral(900);
+}
+
+// Text Preset 4: DM Sans, Bold - 28px, line-height 120%, letter-spacing 0
+.text-preset-4 {
+  @include font-body;
+  font-size: 28px;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: color-neutral(900);
+}
+
+// Text Preset 5: DM Sans, SemiBold - 20px, line-height 120%, letter-spacing 0
+.text-preset-5 {
+  @include font-body;
+  font-size: 20px;
+  font-weight: $font-weight-semibold;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: color-neutral(900);
+}
+
+// Text Preset 5 (Medium): DM Sans, Medium - 20px, line-height 120%, letter-spacing 0
+.text-preset-5-medium {
+  @include font-body;
+  font-size: 20px;
+  font-weight: $font-weight-medium;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: color-neutral(900);
+}
+
+// Text Preset 6: DM Sans, Medium - 18px, line-height 120%, letter-spacing 0
+.text-preset-6 {
+  @include font-body;
+  font-size: 18px;
+  font-weight: $font-weight-medium;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: color-neutral(900);
+}
+
+// Text Preset 7: DM Sans, Medium - 16px, line-height 120%, letter-spacing 0
+.text-preset-7 {
+  @include font-body;
+  font-size: 16px;
+  font-weight: $font-weight-medium;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: color-neutral(900);
+}
+
+// Text Preset 8: DM Sans, Medium - 14px, line-height 120%, letter-spacing 0
+.text-preset-8 {
+  @include font-body;
+  font-size: 14px;
+  font-weight: $font-weight-medium;
+  line-height: 1.2;
+  letter-spacing: 0;
+  color: color-neutral(900);
+}
+
+// Heading styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-heading;
+  font-weight: $font-weight-bold;
+  color: color-neutral(900);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 52px;
+
+  @include respond-to(desktop) {
+    font-size: 52px;
+  }
+}
+
+h2 {
+  font-size: 32px;
+
+  @include respond-to(desktop) {
+    font-size: 32px;
+  }
+}
+
+h3 {
+  font-size: 28px;
+
+  @include respond-to(desktop) {
+    font-size: 28px;
+  }
+}
+
+h4 {
+  font-size: 20px;
+
+  @include respond-to(desktop) {
+    font-size: 20px;
+  }
+}
+
+h5 {
+  font-size: 18px;
+
+  @include respond-to(desktop) {
+    font-size: 18px;
+  }
+}
+
+h6 {
+  font-size: 16px;
+
+  @include respond-to(desktop) {
+    font-size: 16px;
+  }
+}
+
+p {
+  @include font-body;
+  font-size: 18px;
+  font-weight: $font-weight-medium;
+  line-height: 1.2;
+  color: color-neutral(900);
+}
+
+// Link styles
+a {
+  color: color-blue(500);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: color-blue(700);
+  }
+
+  &:focus {
+    outline: 2px solid color-blue(500);
+    outline-offset: 2px;
+  }
+}
+
+// Button styles
+button {
+  @include font-body;
+  font-size: 16px;
+  font-weight: $font-weight-medium;
+  line-height: 1.2;
+  cursor: pointer;
+  border: none;
+  background: none;
+
+  &:focus {
+    outline: 2px solid color-blue(500);
+    outline-offset: 2px;
+  }
+}
+
+// Input styles
+input,
+textarea,
+select {
+  @include font-body;
+  font-size: 16px;
+  font-weight: $font-weight-medium;
+  line-height: 1.2;
+  color: color-neutral(900);
+
+  &:focus {
+    outline: 2px solid color-blue(500);
+    outline-offset: 2px;
+  }
+}
+
+// List styles
+ul,
+ol {
+  list-style: none;
+}
+
+// Image styles
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Utility classes
+.text-white {
+  color: color-neutral(0);
+}
+
+.text-neutral-900 {
+  color: color-neutral(900);
+}
+
+.text-neutral-800 {
+  color: color-neutral(800);
+}
+
+.text-neutral-700 {
+  color: color-neutral(700);
+}
+
+.text-neutral-600 {
+  color: color-neutral(600);
+}
+
+.text-neutral-300 {
+  color: color-neutral(300);
+}
+
+.text-neutral-200 {
+  color: color-neutral(200);
+}
+
+.text-blue-500 {
+  color: color-blue(500);
+}
+
+.text-blue-700 {
+  color: color-blue(700);
+}
+
+.text-orange-500 {
+  color: color-orange(500);
+}
+
+// Font weight utilities
+.font-light {
+  font-weight: $font-weight-light;
+}
+
+.font-medium {
+  font-weight: $font-weight-medium;
+}
+
+.font-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.font-bold {
+  font-weight: $font-weight-bold;
+}
+
+// Font family utilities
+.font-body {
+  @include font-body;
+}
+
+.font-heading {
+  @include font-heading;
+}
+
+// Responsive typography adjustments
+@include respond-to(mobile) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .text-preset-1 {
+    font-size: 48px;
+  }
+
+  .text-preset-2 {
+    font-size: 32px;
+  }
+
+  .text-preset-3 {
+    font-size: 24px;
+  }
+}
+
+@include respond-to(desktop) {
+  body {
+    font-size: 18px;
+  }
+}

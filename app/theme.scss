@@ -1,0 +1,170 @@
+// Colors
+$color-neutral-900: hsl(243, 96%, 9%);
+$color-neutral-800: hsl(243, 27%, 20%);
+$color-neutral-700: hsl(243, 23%, 24%);
+$color-neutral-600: hsl(243, 23%, 30%);
+$color-neutral-300: hsl(240, 6%, 70%);
+$color-neutral-200: hsl(250, 6%, 84%);
+$color-neutral-0: hsl(0, 0%, 100%);
+
+$color-orange-500: hsl(28, 100%, 52%);
+
+$color-blue-500: hsl(233, 67%, 56%);
+$color-blue-700: hsl(248, 70%, 36%);
+
+// Color maps for easier access
+$colors-neutral: (
+  900: $color-neutral-900,
+  800: $color-neutral-800,
+  700: $color-neutral-700,
+  600: $color-neutral-600,
+  300: $color-neutral-300,
+  200: $color-neutral-200,
+  0: $color-neutral-0,
+);
+
+$colors-orange: (
+  500: $color-orange-500,
+);
+
+$colors-blue: (
+  500: $color-blue-500,
+
+  700: $color-blue-700,
+);
+
+// Typography
+$font-family-body: "DM Sans", sans-serif;
+$font-family-heading: "Bricolage Grotesque", sans-serif;
+
+$font-weight-light: 300;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$font-size-body: 18px;
+
+// Spacing
+$spacing-0: 0;
+$spacing-025: 2px;
+$spacing-050: 4px;
+$spacing-075: 6px;
+$spacing-100: 8px;
+$spacing-125: 10px;
+$spacing-150: 12px;
+$spacing-200: 16px;
+$spacing-250: 20px;
+$spacing-300: 24px;
+$spacing-400: 32px;
+$spacing-500: 40px;
+$spacing-600: 48px;
+$spacing-800: 64px;
+$spacing-1000: 80px;
+$spacing-1200: 96px;
+$spacing-1400: 112px;
+$spacing-1600: 128px;
+$spacing-1800: 140px;
+
+// Spacing map
+$spacings: (
+  0: $spacing-0,
+  025: $spacing-025,
+  050: $spacing-050,
+  075: $spacing-075,
+  100: $spacing-100,
+  125: $spacing-125,
+  150: $spacing-150,
+  200: $spacing-200,
+  250: $spacing-250,
+  300: $spacing-300,
+  400: $spacing-400,
+  500: $spacing-500,
+  600: $spacing-600,
+  800: $spacing-800,
+  1000: $spacing-1000,
+  1200: $spacing-1200,
+  1400: $spacing-1400,
+  1600: $spacing-1600,
+  1800: $spacing-1800,
+);
+
+// Radius
+$radius-0: 0;
+$radius-4: 4px;
+$radius-6: 6px;
+$radius-8: 8px;
+$radius-10: 10px;
+$radius-12: 12px;
+$radius-16: 16px;
+$radius-20: 20px;
+$radius-24: 24px;
+$radius-full: 999px;
+
+// Radius map
+$radiuses: (
+  0: $radius-0,
+  4: $radius-4,
+  6: $radius-6,
+  8: $radius-8,
+  10: $radius-10,
+  12: $radius-12,
+  16: $radius-16,
+  20: $radius-20,
+  24: $radius-24,
+  full: $radius-full,
+);
+
+// Breakpoints
+$breakpoint-mobile: 375px;
+$breakpoint-desktop: 1440px;
+
+// Breakpoint map
+$breakpoints: (
+  mobile: $breakpoint-mobile,
+  desktop: $breakpoint-desktop,
+);
+
+// Mixins
+
+// Media query mixin
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' not found in $breakpoints map.";
+  }
+}
+
+// Font family mixins
+@mixin font-body {
+  font-family: $font-family-body;
+}
+
+@mixin font-heading {
+  font-family: $font-family-heading;
+}
+
+// Function to get color from map
+@function color-neutral($shade) {
+  @return map-get($colors-neutral, $shade);
+}
+
+@function color-orange($shade) {
+  @return map-get($colors-orange, $shade);
+}
+
+@function color-blue($shade) {
+  @return map-get($colors-blue, $shade);
+}
+
+// Function to get spacing from map
+@function spacing($size) {
+  @return map-get($spacings, $size);
+}
+
+// Function to get radius from map
+@function radius($size) {
+  @return map-get($radiuses, $size);
+}
