@@ -1,11 +1,8 @@
-@use "../../app/theme.module.scss" as *;
-
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding-top: 48px;
-  padding-left: 144px;
-  padding-right: 144px;
+  background-color: color-neutral(900);
 }
