@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // Colors
 $color-neutral-900: hsl(243, 96%, 9%);
 $color-neutral-800: hsl(243, 27%, 20%);
@@ -128,8 +130,8 @@ $breakpoints: (
 
 // Media query mixin
 @mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: map-get($breakpoints, $breakpoint)) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
       @content;
     }
   } @else {
@@ -148,23 +150,23 @@ $breakpoints: (
 
 // Function to get color from map
 @function color-neutral($shade) {
-  @return map-get($colors-neutral, $shade);
+  @return map.get($colors-neutral, $shade);
 }
 
 @function color-orange($shade) {
-  @return map-get($colors-orange, $shade);
+  @return map.get($colors-orange, $shade);
 }
 
 @function color-blue($shade) {
-  @return map-get($colors-blue, $shade);
+  @return map.get($colors-blue, $shade);
 }
 
 // Function to get spacing from map
 @function spacing($size) {
-  @return map-get($spacings, $size);
+  @return map.get($spacings, $size);
 }
 
 // Function to get radius from map
 @function radius($size) {
-  @return map-get($radiuses, $size);
+  @return map.get($radiuses, $size);
 }
