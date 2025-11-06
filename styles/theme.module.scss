@@ -1,6 +1,5 @@
 @use "sass:map";
 
-// Colors
 $color-neutral-900: hsl(243, 96%, 9%);
 $color-neutral-800: hsl(243, 27%, 20%);
 $color-neutral-700: hsl(243, 23%, 24%);
@@ -14,7 +13,6 @@ $color-orange-500: hsl(28, 100%, 52%);
 $color-blue-500: hsl(233, 67%, 56%);
 $color-blue-700: hsl(248, 70%, 36%);
 
-// Color maps for easier access
 $colors-neutral: (
   900: $color-neutral-900,
   800: $color-neutral-800,
@@ -35,7 +33,6 @@ $colors-blue: (
   700: $color-blue-700,
 );
 
-// Typography
 $font-family-body: "DM Sans", sans-serif;
 $font-family-heading: "Bricolage Grotesque", sans-serif;
 
@@ -46,7 +43,6 @@ $font-weight-bold: 700;
 
 $font-size-body: 18px;
 
-// Spacing
 $spacing-0: 0;
 $spacing-025: 2px;
 $spacing-050: 4px;
@@ -67,7 +63,6 @@ $spacing-1400: 112px;
 $spacing-1600: 128px;
 $spacing-1800: 140px;
 
-// Spacing map
 $spacings: (
   0: $spacing-0,
   025: $spacing-025,
@@ -90,7 +85,6 @@ $spacings: (
   1800: $spacing-1800,
 );
 
-// Radius
 $radius-0: 0;
 $radius-4: 4px;
 $radius-6: 6px;
@@ -102,7 +96,6 @@ $radius-20: 20px;
 $radius-24: 24px;
 $radius-full: 999px;
 
-// Radius map
 $radiuses: (
   0: $radius-0,
   4: $radius-4,
@@ -116,19 +109,16 @@ $radiuses: (
   full: $radius-full,
 );
 
-// Breakpoints
 $breakpoint-mobile: 375px;
+$breakpoint-tablet: 768px;
 $breakpoint-desktop: 1440px;
 
-// Breakpoint map
 $breakpoints: (
   mobile: $breakpoint-mobile,
+  tablet: $breakpoint-tablet,
   desktop: $breakpoint-desktop,
 );
 
-// Mixins
-
-// Media query mixin
 @mixin respond-to($breakpoint) {
   @if map.has-key($breakpoints, $breakpoint) {
     @media (min-width: map.get($breakpoints, $breakpoint)) {
@@ -139,7 +129,6 @@ $breakpoints: (
   }
 }
 
-// Font family mixins
 @mixin font-body {
   font-family: $font-family-body;
 }
@@ -148,7 +137,6 @@ $breakpoints: (
   font-family: $font-family-heading;
 }
 
-// Function to get color from map
 @function color-neutral($shade) {
   @return map.get($colors-neutral, $shade);
 }
@@ -161,12 +149,10 @@ $breakpoints: (
   @return map.get($colors-blue, $shade);
 }
 
-// Function to get spacing from map
 @function spacing($size) {
   @return map.get($spacings, $size);
 }
 
-// Function to get radius from map
 @function radius($size) {
   @return map.get($radiuses, $size);
 }

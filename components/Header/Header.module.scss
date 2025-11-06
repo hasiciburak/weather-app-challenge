@@ -1,8 +1,19 @@
 .header {
   display: flex;
+  flex-direction: column;
+  background-color: color-neutral(900);
+  padding-top: 3rem;
+}
+
+.headerNavigation {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-top: 48px;
-  background-color: color-neutral(900);
+}
+
+.headerTitleText {
+  text-align: center;
+  font-size: 3.25rem;
+  margin-top: 4rem;
 }

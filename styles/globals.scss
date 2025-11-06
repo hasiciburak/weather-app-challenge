@@ -20,6 +20,7 @@ body {
   font-weight: $font-weight-medium;
   line-height: 1.2;
   min-height: 100vh;
+  padding: 0 112px;
 }
 
 // Text Preset 1: DM Sans, SemiBold Italic - 96px, line-height 100%, letter-spacing -2px
@@ -31,6 +32,7 @@ body {
   line-height: 1;
   letter-spacing: -2px;
   color: color-neutral(0);
+  font-family: $font-family-heading;
 }
 
 // Text Preset 2: Bricolage Grotesque, Bold - 52px, line-height 120%, letter-spacing 0
