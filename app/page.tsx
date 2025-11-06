@@ -1,5 +1,10 @@
-import WeatherExample from "@/components/WeatherExample/WeatherExample";
+import DailyForecast from "@/components/DailyForecast/DailyForecast";
+import ForecastCard from "@/components/ForecastCard/ForecastCard";
 
 export default function Home() {
-  return <WeatherExample />;
+  return (
+    <div>
+      <DailyForecast />
+    </div>
+  );
 }

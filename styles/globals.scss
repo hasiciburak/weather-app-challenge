@@ -20,7 +20,15 @@ body {
   font-weight: $font-weight-medium;
   line-height: 1.2;
   min-height: 100vh;
-  padding: 0 112px;
+  padding: 0 spacing(1400);
+
+  @media (max-width: $breakpoint-tablet) {
+    padding: 0 spacing(300);
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 spacing(200);
+  }
 }
 
 // Text Preset 1: DM Sans, SemiBold Italic - 96px, line-height 100%, letter-spacing -2px
@@ -313,7 +321,7 @@ img {
 }
 
 // Responsive typography adjustments
-@include respond-to(mobile) {
+@media (max-width: $breakpoint-mobile) {
   body {
     font-size: 16px;
   }
@@ -343,7 +351,7 @@ img {
   }
 }
 
-@include respond-to(desktop) {
+@media (min-width: $breakpoint-desktop) {
   body {
     font-size: 18px;
   }

@@ -1,0 +1,11 @@
+.advancedForecast {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-top: 24px;
+
+  @media (max-width: $breakpoint-tablet) {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

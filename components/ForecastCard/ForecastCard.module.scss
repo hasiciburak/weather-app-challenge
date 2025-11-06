@@ -1,0 +1,30 @@
+.forecastCard {
+  display: flex;
+  flex-direction: column;
+  gap: spacing(300);
+  align-items: flex-start;
+  padding: spacing(250);
+  background-color: color-neutral(800);
+  border: 1px solid color-neutral(600);
+  border-radius: radius(12);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.label {
+  color: color-neutral(200);
+  margin: 0;
+}
+
+.value {
+  color: color-neutral(0);
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: spacing(050);
+}
+
+.unit {
+  font-size: 0.5em;
+  vertical-align: baseline;
+}
